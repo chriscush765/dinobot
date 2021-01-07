@@ -14,7 +14,7 @@ $msg_array = explode(" ", $msg->text);
 $num_dinos = 0;
 
 for ($i = 1; $i < count($msg_array); $i++) {
-    if(strpos($msg_array[$i], 'dino') !== false){
+    if(stripos($msg_array[$i], 'dino') !== false){
         $num_dinos = $msg_array[$i-1];
     }
 }
