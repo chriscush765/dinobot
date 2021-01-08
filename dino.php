@@ -19,8 +19,11 @@ for ($i = 1; $i < count($msg_array); $i++) {
     }
 }
 
-if($num_dinos == 0)
-    die("no dinos");
+if(!is_numeric($num_dinos) || $num_dinos == 0)
+    if((rand(1,200)<=1)) // 1 in 200 chance of triggering AI
+        $num_dinos = 1;
+    else
+        die("no dinos");
 
 $reply_text = str_repeat("d", $num_dinos);
 
